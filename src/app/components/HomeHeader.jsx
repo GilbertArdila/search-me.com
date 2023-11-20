@@ -11,7 +11,7 @@ const HomeHeader = () => {
             </Link>
             <Link href={'https://images.google.com'} className='hover:underline'>Images</Link>
             <Link href={'https://images.google.com'} className='hover:underline'><TbGridDots className='bg-transparent hover:bg-gray-200 rounded-full text-4xl p-2'/></Link>
-            <button className='bg-blue-500 text-white px-6 py-2 font-medium rounded-md hover:brightness-105 hover:shadow-md transition-shadow'>Sign in</button>
+            <button className='sign-in-btn'>Sign in</button>
         </div>
     </header>
   )
