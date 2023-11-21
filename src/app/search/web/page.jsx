@@ -2,7 +2,8 @@ import Link from "next/link";
 
 const SearchWeb = async ({searchParams}) => {
 
-const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.API_GOOGLE_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}`);
+  try {
+    const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.API_GOOGLE_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}`);
 
 if(!response.ok){
   throw new Error('Something went wrong')
@@ -31,6 +32,12 @@ if(!results){
       )) }
     </div>
   )
+    
+  } catch (error) {
+    throw new Error(`Fetching error ${error}`)
+  }
+
+
 }
 
 export default SearchWeb;
