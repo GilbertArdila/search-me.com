@@ -12,7 +12,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      {/**this styles are to let the footer down always */}
+      <body className={`${inter.className} relative min-h-screen`}>
         {children}
         <Footer/>
         </body>
