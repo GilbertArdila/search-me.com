@@ -6,34 +6,31 @@ import { CiCamera } from 'react-icons/ci';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 
 
+
 const SearchHeaderOptions = () => {
   const router = useRouter();
   const pathName = usePathname();
   const searchParams = useSearchParams();
 
   const searchTerm = searchParams.get('searchTerm');
+  
 
+  function selectedTab(tab){
+    router.push(`/search/${tab === "Images" ? "image":"web"}?searchTerm=${searchTerm}`)
+  }
 
   return (
     <div className='flex items-center space-x-2 select-none border-b-2 lg:justify-start lg:pl-4 justify-center  w-full   mx-4 md:mx-auto'>
 
       <div
-        onClick={(e) => {
-          e.preventDefault();
-          if (!searchTerm.trim()) return;
-          router.push(`/search/web?searchTerm=${searchTerm}`)
-        }}
+        onClick={() => selectedTab('All')}
         className={`search-header ${pathName === "/search/web" && "search-header-selected"}`}>
         <SlMagnifier className='text-md' />
         <span>All</span>
       </div>
 
       <div
-        onClick={(e) => {
-          e.preventDefault();
-          if (!searchTerm.trim()) return;
-          router.push(`/search/image?searchTerm=${searchTerm}`)
-        }}
+        onClick={() => selectedTab('Images')}
         className={`search-header ${pathName === "/search/image" && "search-header-selected"}`}>
         <CiCamera className='text-md' />
         <span>Images</span>
