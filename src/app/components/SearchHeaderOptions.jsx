@@ -12,7 +12,7 @@ const SearchHeaderOptions = () => {
   const searchParams = useSearchParams();
 
   const searchTerm = searchParams.get('searchTerm');
-  
+
 
   return (
     <div className='flex items-center space-x-2 select-none border-b-2 lg:justify-start lg:pl-4 justify-center  w-full   mx-4 md:mx-auto'>
@@ -23,7 +23,7 @@ const SearchHeaderOptions = () => {
           if (!searchTerm.trim()) return;
           router.push(`/search/web?searchTerm=${searchTerm}`)
         }}
-        className={`flex items-center space-x-1 border-b-4 border-transparent cursor-pointer    active:text-blue-500 pb-3 px-2 ${pathName === "/search/web" && "!text-blue-500 !border-blue-500"}`}>
+        className={`search-header ${pathName === "/search/web" && "search-header-selected"}`}>
         <SlMagnifier className='text-md' />
         <span>All</span>
       </div>
@@ -34,7 +34,7 @@ const SearchHeaderOptions = () => {
           if (!searchTerm.trim()) return;
           router.push(`/search/image?searchTerm=${searchTerm}`)
         }}
-        className={`flex items-center space-x-1 border-b-4 border-transparent cursor-pointer   active:text-blue-500 pb-3 px-2 ${pathName === "/search/image" && "!text-blue-500 !border-blue-500"}`}>
+        className={`search-header ${pathName === "/search/image" && "search-header-selected"}`}>
         <CiCamera className='text-md' />
         <span>Images</span>
       </div>

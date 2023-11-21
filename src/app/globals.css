@@ -16,5 +16,11 @@
 .sign-in-btn{
     @apply bg-blue-500 text-white sm:px-6 py-2 w-full max-w-[70px] sm:max-w-[100px] font-medium rounded-md hover:brightness-105 hover:shadow-md transition-all ml-2;
 }
+.search-header{
+    @apply flex items-center space-x-1 border-b-4 border-transparent cursor-pointer    active:text-blue-500 pb-3 px-2
+}
+.search-header-selected{
+    @apply !text-blue-500 !border-blue-500
+}
 }
 
