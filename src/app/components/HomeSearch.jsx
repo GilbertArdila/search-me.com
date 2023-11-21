@@ -3,7 +3,7 @@ import { FcSearch } from 'react-icons/fc';
 import { SiIconfinder } from 'react-icons/si'
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+
 
 const HomeSearch = () => {
 
@@ -32,13 +32,17 @@ const HomeSearch = () => {
       <form 
       onSubmit={handleSubmit}
       className='flex w-full mt-5 mx-auto max-w-[90%]  border border-gray-200 px-5 py-3 justify-between rounded-full hover:shadow-md transition-shadow focus-within:shadow-md sm:max-w-xl lg:max-w-2xl'>
-        <FcSearch className='text-xl text-gray-500 mr-3' />
+        <FcSearch 
+        onClick={handleSubmit}
+        className='text-xl text-gray-500 mr-3' />
         <input
         value={term}
         onChange={(e) => setTerm(e.target.value)} 
         type='text' 
         className='flex-grow focus:outline-none' />
-        <SiIconfinder className='text-xl' />
+        <SiIconfinder 
+        onClick={handleSubmit}
+        className='text-xl' />
       </form>
       <div className='flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-x-4 sm:space-y-0 justify-center mt-8'>
         <button 

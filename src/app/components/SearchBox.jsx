@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
-const SearchBoxComponent = () => {
+const SearchBox = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const searchTerm = searchParams.get('searchTerm');
@@ -37,4 +37,4 @@ const SearchBoxComponent = () => {
   )
 }
 
-export default SearchBoxComponent;
+export default SearchBox;
