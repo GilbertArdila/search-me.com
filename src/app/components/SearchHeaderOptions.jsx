@@ -20,7 +20,7 @@ const SearchHeaderOptions = () => {
   }
 
   return (
-    <div className='flex items-center space-x-2 select-none border-b-2 lg:justify-start lg:pl-4 justify-center  w-full   mx-4 md:mx-auto'>
+    <div className='flex items-center space-x-2 select-none border-b-2 lg:justify-start lg:pl-4 justify-center  w-full   mx-4  sm:w-[90%] sm:mx-auto'>
 
       <div
         onClick={() => selectedTab('All')}

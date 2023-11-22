@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import {TbGridDots} from 'react-icons/tb';
+import SingInButton from './SingInButton';
 
 
 const HomeHeader = () => {
@@ -11,7 +12,7 @@ const HomeHeader = () => {
             </Link>
             <Link href={'https://images.google.com'} className='hover:underline'>Images</Link>
             <Link href={'https://images.google.com'} className='hover:underline'><TbGridDots className='bg-transparent hover:bg-gray-200 rounded-full text-4xl p-2'/></Link>
-            <button className='sign-in-btn'>Sign in</button>
+            <SingInButton onClick={null}/>
         </div>
     </header>
   )

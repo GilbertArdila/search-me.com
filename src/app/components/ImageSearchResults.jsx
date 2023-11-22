@@ -1,11 +1,12 @@
 
 import Link from 'next/link';
 import React from 'react'
+import PaginationButtons from './PaginationButtons';
 
 const ImageSearchResults = ({results}) => {
     
   return (
-    <div className='pb-24 mt-4'>
+    <div className='pb-40 mt-4'>
         <div className='flex flex-col'>
             <span className='ml-2'>Total results found:{' '}{results.searchInformation.formattedTotalResults}</span>
         <span className='ml-2'>🕓{' '}{results.searchInformation.formattedSearchTime}{' Seconds'}</span>
@@ -30,6 +31,7 @@ const ImageSearchResults = ({results}) => {
                 </div>
             ))}
         </div>
+        <div className='ml-16'><PaginationButtons/></div>
     </div>
   )
 }
