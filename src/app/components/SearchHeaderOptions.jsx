@@ -1,11 +1,9 @@
 'use client';
 
-import { SlMagnifier } from 'react-icons/sl';
-import { CiCamera } from 'react-icons/ci';
-
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 
-
+import { SlMagnifier } from 'react-icons/sl';
+import { CiCamera } from 'react-icons/ci';
 
 const SearchHeaderOptions = () => {
   const router = useRouter();
@@ -13,11 +11,11 @@ const SearchHeaderOptions = () => {
   const searchParams = useSearchParams();
 
   const searchTerm = searchParams.get('searchTerm');
-  
 
-  function selectedTab(tab){
-    router.push(`/search/${tab === "Images" ? "image":"web"}?searchTerm=${searchTerm}`)
+  function selectedTab(tab) {
+    router.push(`/search/${tab === "Images" ? "image" : "web"}?searchTerm=${searchTerm}`)
   }
+
 
   return (
     <div className='flex items-center space-x-2 select-none border-b-2 lg:justify-start lg:pl-4 justify-center  w-full   mx-4  sm:w-[90%] sm:mx-auto'>
@@ -35,7 +33,6 @@ const SearchHeaderOptions = () => {
         <CiCamera className='text-md' />
         <span>Images</span>
       </div>
-
     </div>
   )
 }
